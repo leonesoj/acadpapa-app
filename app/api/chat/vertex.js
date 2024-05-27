@@ -1,16 +1,18 @@
 import { VertexAI } from "@google-cloud/vertexai";
 
-// const authOptions = {
-//   credentials: {
-//     client_email: process.env.GOOGLE_CLIENT_EMAIL,
-//     private_key: process.env.GOOGLE_PRIVATE_KEY?.split(String.raw('\n')).join("\n")
-//   }
-// }
+// console.log(process.env.GOOGLE_PRIVATE_KEY);
+
+const authOptions = {
+  credentials: {
+    client_email: process.env.GOOGLE_CLIENT_EMAIL,
+    private_key: process.env.GOOGLE_PRIVATE_KEY
+  }
+}
 
 const vertex_ai = new VertexAI({
     project: 'acadpapa-app', 
     location: 'us-central1',
-    // googleAuthOptions: authOptions 
+    googleAuthOptions: authOptions 
 });
 const model = 'gemini-1.5-flash-preview-0514';
 
